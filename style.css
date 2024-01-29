@@ -408,3 +408,232 @@ footer .next-btn:hover
 
 }
   /* end of the result box */
+
+
+  /* start of the media queries */
+
+  /* start of the start button */
+  /* For smaller screens (mobile devices) */
+@media (max-width: 767px) {
+  .start-btn button {
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 100%; /* Ensure full width on small screens */
+  }
+
+  /* Adjust positioning for smaller screens if needed */
+  .start-btn {
+    top: 20%; /* Example adjustment */
+  }
+}
+
+/* For medium-sized screens (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Adjust styles as needed for tablets */
+  .start-btn button {
+    font-size: 20px; /* Example adjustment for tablets */
+  }
+}
+
+  /* end of the start button */
+
+
+  /* start of the info box */
+  @media (max-width: 767px) {
+    .info-box {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .info-box .info-title {
+      font-size: 18px;
+    }
+  
+    .info-box .info-list .info {
+      font-size: 15px;
+    }
+  
+    .info-box .buttons button {
+      width: 45%;
+      margin: 0 5px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Tablets */
+    .info-box {
+      width: 70%;
+      padding: 25px;
+    }
+  
+    .info-box .info-title {
+      font-size: 20px;
+    }
+  
+    .info-box .info-list .info {
+      font-size: 16px;
+    }
+  
+    .info-box .buttons button {
+      width: 40%;
+      margin: 0 10px;
+    }
+  }
+  @media (min-width: 992px) {
+    /* Desktops */
+    .info-box {
+      width: 50%;
+      padding: 30px;
+    }
+  
+    .info-box .info-title {
+      font-size: 22px;
+    }
+  
+    .info-box .info-list .info {
+      font-size: 17px;
+    }
+  
+    .info-box .buttons button {
+      width: 30%;
+      margin: 0 15px;
+    }
+  }
+  /* end of the info box */
+
+
+    /* start of the quiz box */
+    @media (max-width: 767px) {
+      .quiz-box {
+        width: 100%;
+        padding: 20px;
+      }
+    
+      .quiz-box header {
+        height: 60px;
+        padding: 0 15px;
+      }
+    
+      .quiz-box header .title {
+        font-size: 18px;
+      }
+    
+      .quiz-box header .timer {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+      }
+    
+      .quiz-box header .timer .timer-sec {
+        font-size: 14px;
+        height: 25px;
+        width: 35px;
+      }
+    
+      .quiz-box section .que-text {
+        font-size: 20px;
+      }
+    
+      section .option-list .option {
+        padding: 6px 10px;
+        margin-bottom: 10px;
+        font-size: 15px;
+      }
+    
+      .option-list .option .icon {
+        height: 22px;
+        width: 22px;
+        font-size: 11px;
+      }
+    }
+    
+    @media (min-width: 768px) and (max-width: 991px) {
+      /* Tablet adjustments (adjust as needed) */
+      .quiz-box {
+        width: 80%;
+        padding: 25px;
+      }
+    
+      .quiz-box header .title {
+        font-size: 20px;
+      }
+    
+      .quiz-box header .timer {
+        width: 130px;
+        height: 40px;
+        font-size: 16px;
+      }
+    
+      .quiz-box header .timer .timer-sec {
+        font-size: 16px;
+        height: 30px;
+        width: 40px;
+      }
+    
+      .quiz-box section .que-text {
+        font-size: 22px;
+      }
+    
+      section .option-list .option {
+        padding: 7px 12px;
+        margin-bottom: 12px;
+        font-size: 16px;
+      }
+    
+      .option-list .option .icon {
+        height: 24px;
+        width: 24px;
+        font-size: 12px;
+      }
+    }
+    /* end of the quiz box */
+
+    /* start of the footer of the quiz box */
+    
+    /* end of the footer of the quiz box */
+
+    /* start of the result block */
+    @media (max-width: 767px) {
+      .result-box {
+        width: 90%;  /* Adjust to fit screen width */
+        padding: 20px;  /* Reduce for smaller screens */
+        font-size: 16px; /* Reduce font size for better readability */
+        transform: translate(-50%, -50%) scale(0.85); /* Adjust scaling */
+      }
+    
+      .result-box .icon {
+        font-size: 80px; /* Reduce icon size */
+        margin-bottom: 5px; /* Reduce margin */
+      }
+    
+      .result-box .buttons button {
+        height: 35px; /* Reduce button height */
+        padding: 0 15px; /* Reduce button padding */
+        font-size: 16px; /* Reduce font size */
+      }
+    }
+    
+    @media (min-width: 768px) and (max-width: 991px) {
+      /* Tablet adjustments */
+      .result-box {
+        width: 80%;
+        padding: 24px;
+        font-size: 18px;
+        transform: translate(-50%, -50%) scale(0.92);
+      }
+    
+      .result-box .icon {
+        font-size: 90px;
+        margin-bottom: 8px;
+      }
+    
+      .result-box .buttons button {
+        height: 38px;
+        padding: 0 18px;
+        font-size: 18px;
+      }
+    }
+    /* end of the result block */
+
+
+
+  /* end of the media queries */
