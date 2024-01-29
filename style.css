@@ -421,17 +421,24 @@ footer .next-btn:hover
     width: 100%; /* Ensure full width on small screens */
   }
 
-  /* Adjust positioning for smaller screens if needed */
+  
   .start-btn {
-    top: 20%; /* Example adjustment */
+    /* top: 20%; Example adjustment */
+    top: 50%;
+    left: 50%;
   }
 }
 
 /* For medium-sized screens (tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
-  /* Adjust styles as needed for tablets */
+  
   .start-btn button {
-    font-size: 20px; /* Example adjustment for tablets */
+    font-size: 20px; 
+  }
+  .start-btn {
+    /* top: 20%; Example adjustment */
+    top: 50%;
+    left: 50%;
   }
 }
 
@@ -441,7 +448,8 @@ footer .next-btn:hover
   /* start of the info box */
   @media (max-width: 767px) {
     .info-box {
-      width: 100%;
+      /* width: 100%; */
+      width: 90%;
       padding: 20px;
     }
   
@@ -522,6 +530,11 @@ footer .next-btn:hover
         height: 35px;
         font-size: 14px;
       }
+
+      .quiz-box header .timer .time-text
+      {
+        font-size: 12px;
+      }
     
       .quiz-box header .timer .timer-sec {
         font-size: 14px;
@@ -557,14 +570,18 @@ footer .next-btn:hover
         font-size: 20px;
       }
     
+      .quiz-box header .timer .time-text
+      {
+        font-size: 12px;
+      }
       .quiz-box header .timer {
         width: 130px;
         height: 40px;
-        font-size: 16px;
+        font-size: 12px;
       }
     
       .quiz-box header .timer .timer-sec {
-        font-size: 16px;
+        font-size: 12px;
         height: 30px;
         width: 40px;
       }
@@ -634,6 +651,133 @@ footer .next-btn:hover
     }
     /* end of the result block */
 
+
+
+
+
+    
+
+
+
+/* Specific adjustments for Galaxy Fold (280px x 653px) */
+@media only screen and (device-width: 280px) and (device-height: 653px) and (orientation: portrait) {
+  .info-box {
+    width: 95%; /* Adapt to most of the available width */
+    padding: 15px; /* Reduce padding */
+    font-size: 16px; /* Reduce overall font size */
+  }
+
+  .info-box .info-title {
+    height: 50px; /* Reduce title height */
+    font-size: 18px; /* Reduce title font size */
+    padding: 0 15px; /* Reduce title padding */
+  }
+
+  .info-box .info-list {
+    padding: 10px 20px; /* Reduce info list padding */
+  }
+
+  .info-box .info-list .info {
+    margin: 4px 0; /* Reduce space between info items */
+  }
+
+  .info-box .buttons {
+    height: 50px; /* Reduce button area height */
+  }
+
+  .info-box .buttons button {
+    width: 80px; /* Reduce button width */
+    height: 35px; /* Reduce button height */
+    margin: 0 4px; /* Reduce button spacing */
+    font-size: 14px; /* Reduce button font size */
+  }
+}
+
+
+
+
+/* Specific adjustments for Galaxy Fold (280px x 653px) */
+@media only screen and (device-width: 280px) and (device-height: 653px) and (orientation: portrait) {
+  .quiz-box {
+    width: 95%; /* Adapt to most of the available width */
+    padding: 15px; /* Tighten padding due to narrower screen */
+  }
+
+  .quiz-box header {
+    height: 55px; /* Reduce header height slightly */
+  }
+
+  .quiz-box header .title {
+    font-size: 18px; /* Reduce title font size */
+  }
+
+  .quiz-box header .timer {
+    width: 110px; /* Reduce timer width */
+    height: 30px; /* Reduce timer height */
+    font-size: 11px; /* Reduce timer font size */
+  }
+
+  .quiz-box header .timer .timer-sec {
+    height: 25px; /* Reduce timer-sec height */
+    width: 30px; /* Reduce timer-sec width */
+    font-size: 11px; /* Reduce timer-sec font size */
+  }
+
+  .quiz-box section .que-text {
+    font-size: 18px; /* Reduce question font size */
+  }
+
+  section .option-list .option {
+    padding: 5px 8px; /* Reduce option padding */
+    margin-bottom: 5px; /* Reduce option margin */
+    font-size: 15px; /* Reduce option font size */
+  }
+
+  .option-list .option .icon {
+    height: 20px; /* Reduce icon size */
+    width: 20px; /* Reduce icon size */
+    font-size: 11px; /* Reduce icon font size */
+  }
+}
+
+
+/* Specific adjustments for Galaxy Fold (280px x 653px) */
+@media only screen and (device-width: 280px) and (device-height: 653px) and (orientation: portrait) {
+  .result-box {
+    width: 95%; /* Adapt to most of the available width */
+    padding: 15px; /* Tighten padding due to narrower screen */
+  }
+
+  .result-box .icon {
+    font-size: 80px; /* Reduce icon size slightly */
+    margin-bottom: 5px; /* Reduce margin */
+  }
+
+  .result-box .complete-text,
+  .result-box .score-text span {
+    font-size: 18px; /* Reduce font size for better readability */
+  }
+
+  .result-box .score-text span p {
+    font-size: 16px; /* Reduce score text font size */
+    padding: 0 3px; /* Reduce padding in score text */
+  }
+
+  .result-box .buttons {
+    flex-direction: column; /* Switch buttons to vertical layout */
+    align-items: center; /* Center buttons horizontally */
+  }
+
+  .result-box .buttons button {
+    margin: 5px 0; /* Reduce space between buttons */
+    width: 90%; /* Use most of the available width */
+    text-align: center; /* Center text within buttons */
+    padding: 0 5px; /* Add a bit of padding to prevent text truncation */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide any overflowing text */
+    text-overflow: ellipsis; /* Indicate truncated text with ellipsis */
+  }
+}
 
 
   /* end of the media queries */
