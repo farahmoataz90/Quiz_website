@@ -104,14 +104,27 @@ next_btn.onclick = ()=>{
 //getting the questions and options from the array in the questions.js file
 function showQuestions(index)
 {
+
     const que_text = document.querySelector(".que-text");
-    let que_tag = '<span>'+ questions[index].numb+ ". " +questions[index].question +'</span>';
-    let option_tag= '<div class="option">'+ questions[index].options[0]  +'<span></span></div>'
-                   +'<div class="option">'+ questions[index].options[1]  +'<span></span></div>'
-                   +'<div class="option">'+ questions[index].options[2]  +'<span></span></div>'
-                   +'<div class="option">'+ questions[index].options[3]  +'<span></span></div>';
+    const option_list = document.querySelector(".option-list");
+    let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
+
+    if (questions[index].type === "multiple-choice") 
+     {
+        let option_tag = '';
+        for (let i = 0; i < questions[index].options.length; i++) {
+          option_tag += '<div class="option">' + questions[index].options[i] + '<span></span></div>';
+        }
+        option_list.innerHTML = option_tag;
+      }
+      
+      else if (questions[index].type === "open-ended") 
+      {
+        option_list.innerHTML = '<div class="answer-input"><input type="text" id="userAnswer"></div>';
+      }
+
     que_text.innerHTML = que_tag;
-    option_list.innerHTML = option_tag;
+  
     const option = option_list.querySelectorAll(".option") ;
 
     for (let i = 0; i < option.length; i++) 
@@ -130,43 +143,55 @@ function optionSelected(answer)
     clearInterval(counter);
     clearInterval(counterLine);
 
-    let userAns = answer.textContent;
-    let correctAns = questions[que_count].answer;
-    let allOptions =  option_list.children.length;
-
-    if(userAns == correctAns)
+    const questionType = questions[que_count].type;
+    if (questionType === "multiple-choice")
     {
-        userScore +=1;
+        // Check for correct multiple-choice answer
+        const userAns = answer.textContent;
+        const correctAns = questions[que_count].answer;
+    
+        if (userAns === correctAns) 
+         {
+            userScore += 1;
+            answer.classList.add("correct");
+            console.log("Answer is correct");
+            answer.insertAdjacentHTML("beforeend", tickIcon);
+          } 
+          else {
+            answer.classList.add("incorrect");
+            console.log("Answer is wrong");
+            answer.insertAdjacentHTML("beforeend", crossIcon);
+      
+            // Automatically select the correct option
+            const allOptions = option_list.children.length;
+            for (let i = 0; i < allOptions; i++) {
+              if (option_list.children[i].textContent === correctAns) {
+                option_list.children[i].setAttribute("class", "option correct");
+                option_list.children[i].insertAdjacentHTML("beforeend", tickIcon);
+              }
+            }
+          }
+
+    }
+    else if (questionType === "open-ended") 
+    {
+        // Handle open-ended answer submission
+       const userAnswer = document.getElementById("userAnswer").value.toLowerCase();
+       const correctAnswer = questions[que_count].answer.toLowerCase();
+
+       if (userAnswer === correctAnswer) 
+       {
+        userScore += 1;
         answer.classList.add("correct");
         console.log("Answer is correct");
-        answer.insertAdjacentHTML("beforeend",tickIcon);
-    }
-    else
-    {
+      } 
+      else 
+      {
         answer.classList.add("incorrect");
         console.log("Answer is wrong");
-        answer.insertAdjacentHTML("beforeend",crossIcon);
-
-
-        //if the answer is incorrect then automatically select the correct one
-        for (let i = 0; i < allOptions; i++) 
-        {
-            if(option_list.children[i].textContent == correctAns)
-            {
-                option_list.children[i].setAttribute("class","option correct");
-                option_list.children[i].insertAdjacentHTML("beforeend",tickIcon);
-
-            }        
-        }
-
-
+      }
     }
-    //once the user select an option the other options are disabled
-    for (let i = 0; i < allOptions; i++) 
-    {
-        option_list.children[i].classList.add("disabled");
-        
-    }
+
 
     next_btn.style.display = "block";
 }
@@ -261,3 +286,7 @@ function showResultBox()
     }
 
 }
+
+
+
+

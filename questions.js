@@ -9,7 +9,8 @@ let questions = [
             "Hyper Text Markup Language",
             "Hyper Text Multiple Language",
             "Hyper Tool Multi Language"
-        ]
+        ],
+        type: "multiple-choice"
     },
     {
         numb: 2,
@@ -20,7 +21,8 @@ let questions = [
             "Colorful Style Sheet",
             "Computer Style Sheet",
             "Cascading Style Sheet"
-        ]
+        ],
+        type: "multiple-choice"
     },
     {
         numb: 3,
@@ -31,7 +33,8 @@ let questions = [
             "HyperText Programming",
             "HyperText preprogramming",
             "HomeText Preprocessor"
-        ]
+        ],
+        type: "multiple-choice"
     },
     {
         numb: 4,
@@ -42,7 +45,8 @@ let questions = [
             "Stylesheete Query Language",
             "Statement Question Language",
             "Structured Query Language"
-        ]
+        ],
+        type: "multiple-choice"
     },
     {
         numb: 5,
@@ -53,6 +57,13 @@ let questions = [
             "eXcutable Multiple Language",
             "eXtra Multi-program Language",
             "eXamine Multiple Language"
-        ]
+        ],
+        type: "multiple-choice"
+    },
+    { 
+        numb: 6,
+        question: "What is the capital of France?",
+        answer: "paris",
+        type: "open-ended"
     }
 ];

@@ -294,9 +294,11 @@ section .option-list .option:hover
 }
 .option-list .option.disabled
 {
-  pointer-events: none;
+  /* pointer-events: none; */
   
 }
+
+
 .quiz-box footer
 {
   height: 60px;
@@ -781,3 +783,37 @@ footer .next-btn:hover
 
 
   /* end of the media queries */
+
+
+  /* start of the complete questions */
+  /* Style the "answer-input" section */
+.answer-input {
+  /* display: none; Initially hide the input field */
+  margin-top: 10px;
+}
+
+/* Style the input field itself */
+#userAnswer {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Show the input field only for open-ended questions */
+.option.selected[type="open-ended"] + .answer-input {
+  display: block;
+}
+
+/* Adjust styling for selected options with input field (if needed) */
+.option.selected[type="open-ended"] {
+  background-color: #f0f0f0;
+}
+
+/* Optionally style focus state if desired */
+#userAnswer:focus {
+  border-color: #2980b9; /* Change border color on focus */
+}
+
+  /* end of the complete questions */
